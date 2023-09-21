@@ -9,9 +9,7 @@ const server = http.createServer((req, res) =>{
     
     let path = './';
 
-    if(req.url === './'){
-        path = path + 'index.html';
-    }else if (req.url === '/contact'){
+    if (req.url === '/contact'){
         path = path + 'contact.html';
     }else if (req.url === '/about'){
         path = path + 'about.html';
@@ -29,4 +27,8 @@ const server = http.createServer((req, res) =>{
             res.end();
         }
     });
+});
+
+server.listen(port, host, () => {
+    console.log('The  Server is running on port', port);
 });
